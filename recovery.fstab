@@ -1,0 +1,22 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+# mount point   fstype  device									device2				flags
+/boot			emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/boot
+/cache			ext4	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/cache
+/data			ext4	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/userdata								flags=encryptable=footer
+/misc			emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/misc
+/recovery		emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/recovery								flags=backup=1
+/system_root			ext4	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/system
+/system_image		emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/system
+/vendor			ext4	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/vendor
+/vendor_image		emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/vendor
+/product			ext4	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/product
+/product_image		emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/product
+/uboot			emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/uboot
+/dtbo			emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/dtbo
+/dtb			emmc	/dev/block/platform/soc/soc:ap-apb/71400000.sdio/by-name/dtb
+
+# Removable storage
+/usb-otg		vfat	/dev/block/platform/soc/soc:ap-apb/71100000.sdio/mmcblk1p1			flags=display="USB-OTG";storage;wipeingui;removable
